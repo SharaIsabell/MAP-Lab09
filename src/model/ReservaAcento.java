@@ -12,7 +12,7 @@ public class ReservaAcento {
 	private HashMap<Integer, StatusAcento> acentos = new HashMap<>();
 
 	public ReservaAcento() {
-		for(int i = 1; i <= 10; i++) {
+		for(int i = 1; i <= 10; i++) { // Inicia o ônibus com 10 acentos, 9 disponíveis e 1 indisponível
 			acentos.put(i, StatusAcento.DISPONIVEL);
 			if(i == 10) {
 				acentos.put(i, StatusAcento.INDISPONIVEL);
@@ -57,8 +57,7 @@ public class ReservaAcento {
 	}
 	
 	
-	//Getters
-	
+	// Getters
 	public List<ReservaAcentoListener> getReservaListeners() {
 		return reservaListeners;
 	}

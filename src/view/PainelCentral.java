@@ -7,8 +7,6 @@ import controller.ReservaAcentoEvent;
 import model.ReservaAcento;
 import model.StatusAcento;
 
-
-
 public class PainelCentral implements ReservaAcentoListener{
 	
 	// https://stackoverflow.com/questions/5762491/how-to-print-color-in-console-using-system-out-println
@@ -29,7 +27,8 @@ public class PainelCentral implements ReservaAcentoListener{
 	public void mostrarCadeiras(ReservaAcentoEvent resEvent) {
 		System.out.println();
 		System.out.println("Disposicao de cadeiras atualizadas");
-		ReservaAcento res = (ReservaAcento)resEvent.getSource();
+		ReservaAcento res = (ReservaAcento) resEvent.getSource();
+		
 		for(Map.Entry<Integer, StatusAcento> acento : res.getAcentos().entrySet()) {
 			if(acento.getValue() == StatusAcento.DISPONIVEL) {
 				System.out.print(ANSI_GREEN_BACKGROUND + acento.getKey() + ANSI_RESET);
